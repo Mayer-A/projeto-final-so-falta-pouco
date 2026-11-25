@@ -1,0 +1,233 @@
+/* ===== Estilo simples - Pokémon CO (um único CSS para todo o projeto) ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "pok titulo";
+    src: url("../font/pokemon/Pokemon Hollow.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "pok";
+    src: url("../font/pokemon/Pokemon Solid.ttf") format("truetype");
+}
+
+body {
+    background-color: #F8F8FF;
+    font-family: Arial, sans-serif;
+    color: #000;
+    min-height: 100vh;
+    /* espaço para o cabeçalho e o rodapé fixos */
+    padding: 140px 0 80px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #F8F8FF;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    height: 90px;
+    width: auto;
+}
+
+.menu {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 20px 35px;
+    font-family: "pok", Arial, sans-serif;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.menu a:not(:last-child) {
+    border-right: 1px solid #333;
+}
+
+.menu a:hover {
+    background-color: #FFE4C4;
+}
+
+/* ---------- Conteúdo ---------- */
+.conteudo {
+    width: 90%;
+}
+
+.abra {
+    height: 300px;
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+}
+
+h1 {
+    font-family: "pok titulo", Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: "pok", Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.text {
+    text-align: left;
+    font-family: "pok", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #333;
+}
+
+/* ---------- Formulários ---------- */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    margin-bottom: 5px;
+    font-family: "pok", Arial, sans-serif;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 300px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.grupo input {
+    margin-bottom: 0;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.botao {
+    font-family: "pok", Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.botao:hover {
+    background-color: #FFE4C4;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ---------- Mensagens ---------- */
+.sucesso,
+.erro {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.sucesso { border-left: 6px solid green; }
+.erro    { border-left: 6px solid red; }
+
+/* ---------- Tabela ---------- */
+.tabela-rolagem {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    font-family: "pok", Arial, sans-serif;
+    background-color: #FFE4C4;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #F8F8FF;
+    border-top: 1px solid #333;
+}
+
+.rodape p {
+    margin: 0;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 800px) {
+    body { padding-top: 0; padding-bottom: 80px; display: block; }
+    .cabecalho { position: static; flex-direction: column; gap: 10px; padding: 10px; }
+    .menu { flex-wrap: wrap; justify-content: center; }
+    .menu a { padding: 12px 18px; }
+    .conteudo { width: 95%; margin: 20px auto; }
+    .abra { float: none; display: block; margin: 0 auto 15px; max-width: 100%; }
+    .grupo { width: 100%; }
+}

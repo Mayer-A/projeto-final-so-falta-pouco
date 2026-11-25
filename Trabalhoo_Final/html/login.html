@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pokémon CO</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+
+        <img src="../img/eevee.png" alt="Eevee" class="logo">
+
+        <nav class="menu">
+            <a href="../index.php">Home</a>
+            <a href="cadastro_aluno.html">Cadastro</a>
+            <a href="../php/lista.php">Lista</a>
+            <a href="../php/comprar.php">Compra</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+    </header>
+
+    <main class="conteudo">
+
+        <div>
+            <h2>Login de Aluno</h2>
+
+            <!-- Formulário que envia os dados via POST para o login.php -->
+            <form action="../php/login.php" method="POST">
+                <div class="grupo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="botoes">
+                    <input type="submit" value="Entrar">
+                    <input type="reset" value="Limpar">
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <p>POKEMON™</p>
+    </footer>
+    
+</body>
+
+</html>
